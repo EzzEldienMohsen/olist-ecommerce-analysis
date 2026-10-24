@@ -2,9 +2,8 @@
 -- Rows:        27, one per state
 -- Measures:    average of (delivery date - purchase date) in days, per state
 -- Assumptions: delivered orders with a delivery date only; days counted between calendar dates;
---              cut-off for trusting an average: at least 30 delivered orders per state.
---              The smallest state, RR, has 45 sale orders (query 04), so all 27 states are kept;
---              confirm the delivered count per state with COUNT(*) on rerun.
+--              cut-off for trusting an average: at least 30 orders per state.
+--              The smallest state, RR, has 45 sale orders (query 04), so all 27 states are kept.
 
 WITH order_delivery (order_id, customer_id, delivery_days) AS (
     SELECT order_id, customer_id,
